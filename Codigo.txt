@@ -1,0 +1,61 @@
+#%%
+# Librerias necesarias para el audio y graficos
+import numpy as np
+import matplotlib.pyplot as plt
+import soundfile as sf
+from IPython.display import Audio
+
+audio_file_path = 'C:/Users/Lugo/Desktop/AnalisisTextos.wav'
+
+#%%
+# Cargar el audio (Tarea 4 de la practica)
+audio, sr = sf.read(audio_file_path)
+
+#  Mostrar informacion del audio (Tarea 4 de la practica)
+# Mostrar el Vector de la senal (primeros 100 elementos)
+print("Vector de la senal (primeros 100 elementos):")
+print(audio[:100])
+
+# Mostrar la cantidad de elementos de la muestra
+print(f"Cantidad de elementos de la muestra: {len(audio)}")
+
+# Mostrar la Frecuencia de Muestreo
+print(f"Frecuencia de Muestreo: {sr} Hz")
+
+# Mostrar la duracion en segundos del audio
+duration_seconds = len(audio) / sr
+print(f"Duracion del audio: {duration_seconds:.3f} segundos")
+
+#%%
+# Imprimir la senal sonora (Tarea 5 de la practica)
+plt.figure(figsize=(14, 6))
+plt.plot(audio)
+plt.title('Senal Sonora')
+plt.xlabel('Muestra')
+plt.ylabel('Amplitud')
+plt.grid(True)
+plt.show() # Muestra el grafico
+
+#%%
+# Reproducir la senal original (Tarea 6 de la practica)
+print("Reproduciendo: Senal original")
+Audio(audio, rate=sr)
+
+#%%
+# Modificar la frecuencia de muestreo para que dure mas y menos tiempo (Tarea 7 de la practica)
+
+# Reproducir mas rapido
+print("Reproduciendo: Mas rapido")
+Audio(audio, rate=sr * 2)
+
+# Reproducir mas lento
+print("Reproduciendo: Mas lento")
+Audio(audio, rate=sr * 0.5)
+
+#%%
+# Bajar la calidad del audio y reproducir la senal (Tarea 8 de la practica)
+print("Reproduciendo: Baja calidad de audio")
+
+# Escalamos los valores del audio para un formato de 8 bits y convertimos a enteros.
+audio_baja_calidad = (audio * 127).astype(np.int8)
+Audio(audio_baja_calidad, rate=sr)
