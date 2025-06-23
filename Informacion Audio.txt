@@ -1,0 +1,19 @@
+Información del Audio Original (AnalisisTextos.mp3):
+
+Formato: Audio MPEG (MP3)
+Tasa de bits: 256 kbps (kilobits por segundo)
+Canales: 1 canal (Mono)
+Frecuencia de muestreo: 48,0 kHz (Kilohertz)
+Duración: 7 segundos y 8 milisegundos
+
+__________________________________________________________
+
+Información del Audio Remuestreado (analisis_resampled.wav):
+
+Formato: Onda
+Tamaño de archivo: 220 KiB
+Duración: 7 segundos y 32 milisegundos
+Modo de tasa de bits: Constante
+Tasa de bits general: 256 kbps (kilobits por segundo)
+Frecuencia de muestreo: 16,0 kHz (kilohertz)
+Aplicación de codificación: Lavf62.1.100
